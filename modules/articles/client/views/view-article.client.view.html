@@ -1,0 +1,24 @@
+<section ng-controller="ArticlesController" ng-init="findOne()">
+  <md-card>
+    <md-card-content>
+      <h2 class="md-title" ng-bind="article.title"></h2>
+      <p ng-bind="article.content"></p>
+      <small class="md-caption">
+        Posted on
+        <span ng-bind="article.created | date:'mediumDate'"></span>
+        by
+        <span ng-bind="article.user.displayName"></span>
+      </small>
+    </md-card-content>
+    <div class="md-actions" layout="row" layout-align="end center" ng-show="authentication.user._id == article.user._id">
+      <md-button ui-sref="articles.edit({articleId: article._id})">
+        <ng-md-icon icon="mode_edit"></ng-md-icon>
+        Edit
+      </md-button>
+      <md-button ng-click="remove();">
+        <ng-md-icon icon="delete"></ng-md-icon>
+        Delete
+      </md-button>
+    </div>
+  </md-card>
+</section>
