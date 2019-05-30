@@ -24,19 +24,19 @@
 
           // Requirements Meter - visual indicator for users
           var requirementsMeter = [{
-            color: 'danger',
+            color: 'md-warn md-hue-2',
             progress: '20'
           }, {
-            color: 'warning',
+            color: 'md-warn md-hue-1',
             progress: '40'
           }, {
-            color: 'info',
+            color: 'md-primary md-hue-1',
             progress: '60'
           }, {
-            color: 'primary',
+            color: 'md-primary',
             progress: '80'
           }, {
-            color: 'success',
+            color: 'md-primary md-hue-2',
             progress: '100'
           }];
 

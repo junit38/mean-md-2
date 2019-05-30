@@ -2,7 +2,7 @@
   <div class="page-header" layout-align="space-between" layout="row">
     <h1 class="md-display-1">{{vm.article._id ? 'Edit Article' : 'New Article'}}</h1>
     <md-button ng-show="vm.article._id" class="md-icon-button" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
+      <ng-md-icon icon="delete"></ng-md-icon>
     </md-button>
   </div>
   <md-whiteframe class="md-whiteframe-z1" layout="column" layout-padding>

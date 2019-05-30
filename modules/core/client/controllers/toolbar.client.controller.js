@@ -1,13 +1,20 @@
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('core').controller('ToolbarController', ['$scope', '$state', '$mdSidenav', 'Authentication',
-  function ($scope, $state, $mdSidenav, Authentication) {
-    // Expose view variables
-    $scope.$state = $state;
-    $scope.authentication = Authentication;
+  angular
+    .module('core')
+    .controller('ToolbarController', ToolbarController);
 
-    $scope.toggleSidenav = function(menuId) {
+  ToolbarController.$inject = ['$scope', '$state', '$mdSidenav', 'Authentication'];
+
+  function ToolbarController($scope, $state, $mdSidenav, Authentication) {
+    var vm = this;
+
+    vm.authentication = Authentication;
+    vm.toggleSidenav = toggleSidenav;
+
+    function toggleSidenav(menuId) {
       $mdSidenav(menuId).toggle();
-    };
+    }
   }
-]);
+}());

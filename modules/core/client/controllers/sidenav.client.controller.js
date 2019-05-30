@@ -1,32 +1,26 @@
-'use strict';
+(function () {
+  'use strict';
 
-angular.module('core').controller('SidenavController', ['$scope', '$state', '$location', '$mdSidenav', 'Authentication', 'Menus',
-  function ($scope, $state, $location, $mdSidenav, Authentication, Menus) {
-    // Expose view variables
-    $scope.$state = $state;
-    $scope.authentication = Authentication;
-    $scope.dropdownOpen = [];
+  angular
+    .module('core')
+    .controller('SidenavController', SidenavController);
 
-    // Get the topbar menu
-    $scope.menu = Menus.getMenu('topbar');
+  SidenavController.$inject = ['$scope', '$state', 'Authentication', 'menuService'];
 
-    // Toggle the menu items
-    $scope.isCollapsed = false;
-    $scope.toggleCollapsibleMenu = function () {
-      $scope.isCollapsed = !$scope.isCollapsed;
-    };
+  function SidenavController($scope, $state, Authentication, menuService) {
+    var vm = this;
 
-    // Collapsing the menu after navigation
-    $scope.$on('$stateChangeSuccess', function () {
-      $scope.isCollapsed = false;
-    });
+    vm.authentication = Authentication;
+    vm.menu = menuService.getMenu('topbar');
+    vm.dropdownOpen = [];
+    vm.toggleMenu = toggleMenu;
 
-    $scope.toggleMenu = function(elem) {
-      if ($scope.dropdownOpen[elem]) {
-        $scope.dropdownOpen[elem] = !$scope.dropdownOpen[elem];
+    function toggleMenu(elem) {
+      if (vm.dropdownOpen[elem]) {
+        vm.dropdownOpen[elem] = !vm.dropdownOpen[elem];
       } else {
-        $scope.dropdownOpen[elem] = true;
+        vm.dropdownOpen[elem] = true;
       }
     };
   }
-]);
+}());

@@ -51,7 +51,7 @@
         </div>
         <div class="form-group" ng-show="!vm.userForm.password.$error.required">
           <label>Password Requirements</label>
-          <uib-progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></uib-progressbar>
+          <md-progress-linear class="{{requirementsColor}}" md-mode="determinate" value="{{requirementsProgress}}"></md-progress-linear>
         </div>
         <div class="text-center form-group">
           <md-button type="submit" class="md-raised md-primary">Sign up</md-button>

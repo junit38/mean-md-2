@@ -1,21 +1,22 @@
 <section>
-  <div class="page-header">
-    <div class="row">
-      <div class="col-md-4">
-        <h1>Users</h1>
-      </div>
-      <div class="col-md-4" style="margin-top: 2em">
-        <input class="form-control col-md-4" type="text" ng-model="vm.search" placeholder="Search" ng-change="vm.figureOutItemsToDisplay()" />
-      </div>
-    </div>
+  <div class="page-header" layout="row" layout-align="space-between">
+    <h1 class="md-display-1">Users</h1>
+    <md-input-container>
+      <input type="text" ng-model="vm.search" placeholder="Search" ng-change="vm.figureOutItemsToDisplay()" />
+    </md-input-container>
   </div>
-  <div class="list-group">
-    <a ng-repeat="user in vm.pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item">
-      <h4 class="list-group-item-heading" ng-bind="user.username"></h4>
-      <p class="list-group-item-text pull-right small" ng-bind="user.roles"></p>
-      <p class="list-group-item-text" ng-bind="user.email"></p>
-    </a>
-  </div>
+  <md-whiteframe class="md-whiteframe-z1" layout-padding layout="column" ng-if="vm.pagedItems.length">
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="user in vm.pagedItems" ui-sref="admin.user({userId: user._id})" class="list-group-item" aria-label="{{ user.username }}">
+        <img ng-src="{{ user.profileImageURL }}" alt="{{ user.username }}" class="md-avatar" />
+        <div class="md-list-item-text">
+          <h3 ng-bind="user.username"></h3>
+          <h4 ng-bind="user.email"></h4>
+          <h4 ng-bind="user.roles"></h4>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-whiteframe>
 
   <uib-pagination boundary-links="true" max-size="8" items-per-page="vm.itemsPerPage" total-items="vm.filterLength" ng-model="vm.currentPage" ng-change="vm.pageChanged()"></uib-pagination>
 </section>
