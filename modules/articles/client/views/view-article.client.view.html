@@ -1,24 +1,37 @@
-<section ng-controller="ArticlesController" ng-init="findOne()">
+<!-- <section>
+  <div class="page-header">
+    <h1 ng-bind="vm.article.title"></h1>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.article.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.article.user" ng-bind="vm.article.user.displayName"></span>
+      <span ng-if="!vm.article.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.article.content"></p>
+</section>
+ -->
+<section>
   <md-card>
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline" ng-bind="vm.article.title"></span>
+      </md-card-title-text>
+    </md-card-title>
     <md-card-content>
-      <h2 class="md-title" ng-bind="article.title"></h2>
-      <p ng-bind="article.content"></p>
-      <small class="md-caption">
-        Posted on
-        <span ng-bind="article.created | date:'mediumDate'"></span>
-        by
-        <span ng-bind="article.user.displayName"></span>
-      </small>
+      <p class="lead" ng-bind="vm.article.content"></p>
+      <em class="text-muted">
+        <small class="md-caption">
+          Posted on
+          <span ng-bind="vm.article.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="vm.article.user" ng-bind="vm.article.user.displayName"></span>
+          <span ng-if="!vm.article.user">Deleted User</span>
+        </small>
+      </em>
     </md-card-content>
-    <div class="md-actions" layout="row" layout-align="end center" ng-show="authentication.user._id == article.user._id">
-      <md-button ui-sref="articles.edit({articleId: article._id})">
-        <ng-md-icon icon="mode_edit"></ng-md-icon>
-        Edit
-      </md-button>
-      <md-button ng-click="remove();">
-        <ng-md-icon icon="delete"></ng-md-icon>
-        Delete
-      </md-button>
-    </div>
   </md-card>
 </section>

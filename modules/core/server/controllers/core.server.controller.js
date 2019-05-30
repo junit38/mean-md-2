@@ -1,12 +1,13 @@
 'use strict';
 
-var validator = require('validator');
+var validator = require('validator'),
+  path = require('path'),
+  config = require(path.resolve('./config/config'));
 
 /**
  * Render the main application page
  */
 exports.renderIndex = function (req, res) {
-
   var safeUserObject = null;
   if (req.user) {
     safeUserObject = {
@@ -18,12 +19,14 @@ exports.renderIndex = function (req, res) {
       profileImageURL: req.user.profileImageURL,
       email: validator.escape(req.user.email),
       lastName: validator.escape(req.user.lastName),
-      firstName: validator.escape(req.user.firstName)
+      firstName: validator.escape(req.user.firstName),
+      additionalProvidersData: req.user.additionalProvidersData
     };
   }
 
   res.render('modules/core/server/views/index', {
-    user: safeUserObject
+    user: JSON.stringify(safeUserObject),
+    sharedConfig: JSON.stringify(config.shared)
   });
 };
 

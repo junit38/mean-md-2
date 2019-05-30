@@ -1,55 +1,59 @@
-<section layout="column" layout-align="center center" ng-controller="AuthenticationController">
+<section layout="column" layout-align="center center">
   <h3 class="md-title">Sign in using your social accounts</h3>
-    <div class="authenticationGridList">
-      <md-grid-list   md-cols-sm="3"
+  <div class="authenticationGridList">
+    <md-grid-list   md-cols-sm="3"
                       md-cols-md="3"
                       md-cols-gt-md="6"
                       md-row-height="62px">
-        <md-grid-tile>
-          <md-button  ng-click="callOauthProvider('/api/auth/facebook')"
-                      aria-label="Facebook Provider"
-                      class="md-fab md-primary social-account-container"
-                      style="background-image: url('/modules/users/client/img/buttons/facebook.png');
-          "></md-button>
-        </md-grid-tile>
-        <md-grid-tile>
-          <md-button  ng-click="callOauthProvider('/api/auth/twitter')"
+      <md-grid-tile>
+        <md-button  ng-click="vm.callOauthProvider('/api/auth/facebook')"
+                    aria-label="Facebook Provider"
+                    class="md-fab md-primary social-account-container"
+                    style="background-image: url('/modules/users/client/img/buttons/facebook.png');
+        "></md-button>
+      </md-grid-tile>
+      <md-grid-tile>
+          <md-button  ng-click="vm.callOauthProvider('/api/auth/twitter')"
                       aria-label="Twitter Provider"
                       class="md-fab md-primary social-account-container"
                       style="background-image: url('/modules/users/client/img/buttons/twitter.png');
           "></md-button>
         </md-grid-tile>
         <md-grid-tile>
-          <md-button  ng-click="callOauthProvider('/api/auth/google')"
+          <md-button  ng-click="vm.callOauthProvider('/api/auth/google')"
                       aria-label="Google Provider"
                       class="md-fab md-primary social-account-container"
                       style="background-image: url('/modules/users/client/img/buttons/google.png');
           "></md-button>
         </md-grid-tile>
-        <md-grid-tile>
-          <md-button  ng-click="callOauthProvider('/api/auth/linkedin')"
+      <md-grid-tile>
+          <md-button  ng-click="vm.callOauthProvider('/api/auth/linkedin')"
                       aria-label="Linkedin Provider"
                       class="md-fab md-primary social-account-container"
                       style="background-image: url('/modules/users/client/img/buttons/linkedin.png');
           "></md-button>
         </md-grid-tile>
         <md-grid-tile>
-          <md-button  ng-click="callOauthProvider('/api/auth/github')"
+          <md-button  ng-click="vm.callOauthProvider('/api/auth/github')"
                       aria-label="Github Provider"
                       class="md-fab md-primary social-account-container"
                       style="background-image: url('/modules/users/client/img/buttons/github.png');
           "></md-button>
         </md-grid-tile>
         <md-grid-tile>
-          <md-button  ng-click="callOauthProvider('/api/auth/paypal')"
+          <md-button  ng-click="vm.callOauthProvider('/api/auth/paypal')"
                       aria-label="Paypal Provider"
                       class="md-fab md-primary social-account-container social-paypal"
                       style="background-image: url('/modules/users/client/img/buttons/paypal.png');
           "></md-button>
         </md-grid-tile>
-      </md-grid-list>
-    </div>
+      <!-- <div class="social-account-container social-button"><a class="btn"><img class="img-responsive" ng-click="vm.callOauthProvider('/api/auth/facebook')" ng-src="/modules/users/client/img/buttons/facebook.png"></a></div>
+      <div class="social-account-container social-button"><a class="btn"><img class="img-responsive" ng-click="vm.callOauthProvider('/api/auth/twitter')" ng-src="/modules/users/client/img/buttons/twitter.png"></a></div>
+      <div class="social-account-container social-button"><a class="btn"><img class="img-responsive" ng-click="vm.callOauthProvider('/api/auth/google')" ng-src="/modules/users/client/img/buttons/google.png"></a></div>
+      <div class="social-account-container social-button"><a class="btn"><img class="img-responsive" ng-click="vm.callOauthProvider('/api/auth/linkedin')" ng-src="/modules/users/client/img/buttons/linkedin.png"></a></div>
+      <div class="social-account-container social-button"><a class="btn"><img class="img-responsive" ng-click="vm.callOauthProvider('/api/auth/github')" ng-src="/modules/users/client/img/buttons/github.png"></a></div>
+      <div class="social-account-container social-button"><a class="btn"><img class="img-responsive" ng-click="vm.callOauthProvider('/api/auth/paypal')"  ng-src="/modules/users/client/img/buttons/paypal.png"></a></div> -->
+    </md-grid-list>
+  </div>
   <div ui-view></div>
 </section>
-
-

@@ -1,0 +1,28 @@
+<section>
+  <div class="page-header" layout-align="space-between" layout="row">
+    <h1 class="md-display-1">{{vm.article._id ? 'Edit Article' : 'New Article'}}</h1>
+    <md-button ng-show="vm.article._id" class="md-icon-button" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </md-button>
+  </div>
+  <md-whiteframe class="md-whiteframe-z1" layout="column" layout-padding>
+    <form name="vm.form.articleForm" ng-submit="vm.save(vm.form.articleForm.$valid)" novalidate>
+      <fieldset layout="column">
+        <md-input-container class="form-group" show-errors>
+          <label class="control-label" for="title">Title</label>
+          <input name="title" type="text" ng-model="vm.article.title" id="title" placeholder="Title" required autofocus>
+          <div ng-messages="vm.form.articleForm.title.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Article title is required.</p>
+          </div>
+        </md-input-container>
+        <md-input-container class="form-group">
+          <label class="control-label" for="content">Content</label>
+          <textarea name="content" data-ng-model="vm.article.content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+        </md-input-container>
+        <div class="form-group">
+          <md-button type="submit" class="md-raised md-primary">{{vm.article._id ? 'Update' : 'Create'}}</md-button>
+        </div>
+      </fieldset>
+    </form>
+  </md-whiteframe>
+</section>

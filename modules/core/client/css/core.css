@@ -1,3 +1,6 @@
+.content {
+  margin-top: 50px;
+}
 .undecorated-link:hover {
   text-decoration: none;
 }
@@ -8,33 +11,26 @@
 .x-ng-cloak {
   display: none !important;
 }
-.img-responsive {
-  max-width: 100%;
-}
 .header-profile-image {
-  width: 24px;
-  height: 24px;
-  margin-top: 16px;
-  margin-bottom: 12px;
-  box-sizing: content-box;
-  margin-right: 32px;
   border-radius: 50%;
+  height: 28px;
+  margin-right: 5px;
+  opacity: 0.8;
+  width: 28px;
 }
-.jumbotron {
-  padding: 30px;
-  margin-bottom: 30px;
-  background-color: #eee;
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
 }
-.well {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  border-radius: 4px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
-  box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+.user-header-dropdown-toggle {
+  padding-bottom: 11px !important;
+  padding-top: 11px !important;
+}
+.user-primary-account {
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 .error-text {
   display: none;
@@ -45,20 +41,3 @@
 .has-error .help-inline.error-text {
   display: inline;
 }
-fieldset {
-  border: none;
-}
-a {
-  color: #3F51B5;
-}
-md-sidenav ul {
-  padding: 0;
-}
-md-sidenav li.active {
-  background-color: rgb(158,158,158);
-  background-color: rgba(158,158,158,0.2);
-}
-.md-success {
-  color: #00695c;
-}
-
