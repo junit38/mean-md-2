@@ -3,6 +3,12 @@
     position: fixed;
   }
 }
+.connected-social-account .social-account-container ng-md-icon {
+	color: red;
+}
+.unconnected-social-account .social-account-container ng-md-icon {
+	color: green;
+}
 .social-account-container {
 	background-color: white !important; /*overide angular-material primary color*/
   background-position: -3px;
