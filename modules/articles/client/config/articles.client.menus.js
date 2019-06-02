@@ -19,7 +19,8 @@
     menuService.addSubMenuItem('topbar', 'articles', {
       title: 'List Articles',
       state: 'articles.list',
-      roles: ['*']
+      roles: ['*'],
+      icon: 'list'
     });
   }
 }());

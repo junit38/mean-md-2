@@ -1,29 +1,26 @@
 <!-- The chat view -->
-<section class="container">
+<section>
   <div class="page-header">
-    <h1>Chat Example</h1>
+    <h1 class="md-display-1">Chat Example</h1>
   </div>
   <!-- The message form -->
-  <form class="col-xs-12 col-md-offset-4 col-md-4" ng-submit="vm.sendMessage();">
-    <fieldset class="row">
-      <div class="input-group">
-        <input type="text" id="messageText" name="messageText" class="form-control" ng-model="vm.messageText" placeholder="Enter new message" autofocus>
-        <span class="input-group-btn">
-          <button type="submit" class="btn btn-primary" ng-disabled="!vm.messageText.length">Submit</button>
-        </span>
-      </div>
+  <form ng-submit="vm.sendMessage();">
+    <fieldset layout="row">
+      <md-input-container class="form-group">
+        <label>Message</label>
+        <input type="text" id="messageText" name="messageText" ng-model="vm.messageText" placeholder="Enter new message">
+      </md-input-container>
+      <md-button type="submit" lass="md-raised md-primary" ng-disabled="!vm.messageText.length">Submit</md-button>
     </fieldset>
   </form>
-  <ul class="list-unstyled">
-    <!-- List all messages -->
-    <li class="col-xs-12 col-md-offset-4 col-md-4 chat-message" ng-repeat="message in vm.messages">
-      <small class="pull-right text-muted" ng-bind="message.created | date:'mediumTime'"></small>
-      <img ng-src="/{{message.profileImageURL}}" alt="{{message.username}}" class="pull-left chat-profile-image" />
-      <div class="pull-left chat-message-details">
-        <strong ng-bind="message.username"></strong>
-        <br>
-        <span ng-bind="message.text"></span>
+  <md-list>
+    <md-list-item class="md-3-line" ng-repeat="message in vm.messages">
+      <img ng-src="{{message.profileImageURL}}" class="md-avatar" alt="{{message.username}}" />
+      <div class="md-list-item-text">
+        <h3 ng-bind="message.username"></h3>
+        <p ng-bind="message.text"></p>
+        <small class="md-caption" ng-bind="message.created | date:'mediumTime'"></small>
       </div>
-    </li>
-  </ul>
+    </md-list-item>
+  </md-list>
 </section>

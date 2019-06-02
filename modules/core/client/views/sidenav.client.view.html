@@ -50,32 +50,32 @@
         <ul ng-show="vm.dropdownOpen['User']" ng-animate="'animate'">
           <li ui-sref-active="active">
             <md-list-item ui-sref="settings.profile" ng-click="navigateTo('settings.profile', $event)">
-              <md-icon></md-icon>
+              <ng-md-icon icon="person"></ng-md-icon>
               <p>Edit Profile</p>
             </md-list-item>
           </li>
           <li ui-sref-active="active">
             <md-list-item ui-sref="settings.picture" ng-click="navigateTo('settings.picture', $event)">
-              <md-icon></md-icon>
+              <ng-md-icon icon="image"></ng-md-icon>
               <p>Change Profile Picture</p>
             </md-list-item>
           </li>
           <li ui-sref-active="active">
             <md-list-item ui-sref="settings.password" ng-show="vm.authentication.user && vm.authentication.user.provider === 'local'" ng-click="navigateTo('settings.password', $event)">
-              <md-icon></md-icon>
+              <ng-md-icon icon="security"></ng-md-icon>
               <p>Change Password</p>
             </md-list-item>
           </li>
           <li ui-sref-active="active">
             <md-list-item ui-sref="settings.accounts" ng-click="navigateTo('settings.accounts', $event)">
-              <md-icon></md-icon>
+              <ng-md-icon icon="public"></ng-md-icon>
               <p>Manage Social Accounts</p>
             </md-list-item>
           </li>
           <md-divider></md-divider>
           <li>
             <md-list-item href="/api/auth/signout" target="_self">
-              <md-icon></md-icon>
+              <ng-md-icon icon="power_settings_new"></ng-md-icon>
               <p>Signout</p>
             </md-list-item>
           </li>

@@ -55,7 +55,7 @@
         roles: ((options.roles === null || typeof options.roles === 'undefined') ? service.defaultRoles : options.roles),
         position: options.position || 0,
         items: [],
-        shouldRender: shouldRender
+        shouldRender: shouldRender,
       });
 
       // Add submenu items
@@ -86,7 +86,8 @@
           params: options.params || {},
           roles: ((options.roles === null || typeof options.roles === 'undefined') ? item.roles : options.roles),
           position: options.position || 0,
-          shouldRender: shouldRender
+          shouldRender: shouldRender,
+          icon: options.icon
         });
       });
 

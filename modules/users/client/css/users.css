@@ -64,3 +64,8 @@
 .pagination li.disabled{
   opacity: 0.3;
 }
+
+.settings-users .md-nav-bar {
+	width: 100%;
+  overflow-x: scroll;
+}
