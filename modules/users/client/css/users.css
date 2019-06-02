@@ -66,6 +66,6 @@
 }
 
 .settings-users .md-nav-bar {
-	width: 100%;
   overflow-x: scroll;
+  width: 100%;
 }
